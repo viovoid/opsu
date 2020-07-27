@@ -28,7 +28,7 @@ import itdelatrisu.opsu.ui.animations.AnimationEquation;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
@@ -192,7 +192,7 @@ public class ScoreData implements Comparable<ScoreData> {
 	 */
 	public String getTimeString() {
 		if (timeString == null)
-			timeString = new SimpleDateFormat("M/d/yyyy h:mm:ss a").format(new Date(timestamp * 1000L));
+			timeString = DateFormat.getDateInstance().format(new Date(timestamp * 1000L));
 		return timeString;
 	}
 
